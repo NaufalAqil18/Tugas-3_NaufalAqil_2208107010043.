@@ -46,7 +46,8 @@ def preprocess_pipeline(image: Image.Image, IMG_SIZE = (224, 224)) -> np.ndarray
     """
     
     # TODO: Lengkapi proses preprocessing di bawah ini
-    
+    image = image.resize(IMG_SIZE)
+    arr = np.array(image).astype("float32") / 255.0
     return arr  # pastikan mengembalikan array hasil preprocessing
 
 # endpoint untuk menerima input dan menghasilkan prediksi
